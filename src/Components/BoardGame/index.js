@@ -32,47 +32,6 @@ const BoardGame = () => {
     }
   };
 
-  const winnerStatus = () => {
-    _.range(0, numRows).forEach((row) => {
-      _.range(0, numCols).forEach((col) => {
-        if (grid[row][col]) {
-          if (
-            checkConsecutive(grid[row][col], row, col, 1, 0) ||
-            checkConsecutive(grid[row][col], row, col, 0, 1)
-          ) {
-            setWinner(grid[row][col]);
-            dispatch(increaseScore({ key: `${currentPlayer}` }));
-            return;
-          }
-        }
-      });
-    });
-  };
-
-  const checkConsecutive = (color, row, col, rowIncrement, colIncrement) => {
-    for (let i = 0; i < 4; i++) {
-      const newRow = row + i * rowIncrement;
-      const newCol = col + i * colIncrement;
-      if (
-        newRow < 0 ||
-        newRow >= numRows ||
-        newCol < 0 ||
-        newCol >= numCols ||
-        grid[newRow][newCol] !== color
-      ) {
-        return false;
-      }
-    }
-    return true;
-  };
-
-  useEffect(() => {
-    winnerStatus();
-    setCurrentPlayer(currentPlayer === "red" ? "yellow" : "red");
-    setOpposingPlayer(opposingPlayer === "yellow" ? "red" : "yellow");
-    dispatch(changeTurn(opposingPlayer));
-  }, [grid]);
-
   const renderCell = (row, col) => {
     const value = grid[row][col];
     return (
@@ -95,6 +54,47 @@ const BoardGame = () => {
       </div>
     );
   };
+
+  const checkConsecutive = (color, row, col, rowIncrement, colIncrement) => {
+    for (let i = 0; i < 4; i++) {
+      const newRow = row + i * rowIncrement;
+      const newCol = col + i * colIncrement;
+      if (
+        newRow < 0 ||
+        newRow >= numRows ||
+        newCol < 0 ||
+        newCol >= numCols ||
+        grid[newRow][newCol] !== color
+      ) {
+        return false;
+      }
+    };
+    return true;
+  };
+
+  const winnerStatus = () => {
+    _.range(0, numRows).forEach((row) => {
+      _.range(0, numCols).forEach((col) => {
+        if (grid[row][col]) {
+          if (
+            checkConsecutive(grid[row][col], row, col, 1, 0) ||
+            checkConsecutive(grid[row][col], row, col, 0, 1)
+          ) {
+            setWinner(grid[row][col]);
+            dispatch(increaseScore({ key: `${currentPlayer}` }));
+            return;
+          }
+        }
+      });
+    });
+  };
+
+  useEffect(() => {
+    winnerStatus();
+    setCurrentPlayer(currentPlayer === "red" ? "yellow" : "red");
+    setOpposingPlayer(opposingPlayer === "yellow" ? "red" : "yellow");
+    dispatch(changeTurn(opposingPlayer));
+  }, [grid]);
 
   return (
     <div className="connect4-grid">
