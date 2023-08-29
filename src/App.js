@@ -1,14 +1,17 @@
-import CurrentTurn from "./Components/CurrentTurn";
-import BoardGame from "./Components/BoardGame";
-import GameScore from "./Components/GameScore";
+import './App.styles.css'
+import {CurrentTurn, GameScore, BoardGame } from './Components/index'
 
 function App() {
   return (
     <div className="App">
       <h1>Connect 4</h1>
-      <CurrentTurn />
-      <GameScore />
-      <BoardGame />
+      <div className='game'>
+        <div className="sidePanel">
+          <CurrentTurn />
+          <GameScore />
+        </div>
+        <BoardGame />
+      </div>
     </div>
   );
 }
