@@ -1,0 +1,12 @@
+.gameScore {
+    padding: 5px;
+    border: 1px solid black;
+}
+
+.teamScores {
+    display: flex;
+}
+.score {
+    margin: 5px;
+    text-align: center;
+}
