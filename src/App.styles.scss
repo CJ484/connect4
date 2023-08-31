@@ -1,19 +1,17 @@
 .App {
     display: flex;
     flex-direction: column;
-}
-
-.App h1 {
-    text-align: center;
+    h1 {
+        text-align: center;
+    }
 }
 
 .game {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-}
-
-.sidePanel {
-    display: flex;
-    flex-direction: column;
+    .sidePanel {
+        display: flex;
+        flex-direction: column;
+    }
 }

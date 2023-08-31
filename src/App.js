@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import Languagelist from './Components/LanguageList';
 import {CurrentTurn, GameScore, BoardGame } from './Components/index'
-import './App.styles.css'
+import './App.styles.scss'
 
 function App() {
   const { t } = useTranslation();

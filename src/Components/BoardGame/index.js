@@ -9,7 +9,7 @@ import checkConsecutive from "../../utils/checkConsecutive.js";
 import { useTranslation } from "react-i18next";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./styles.css";
+import "./styles.scss";
 
 const BoardGame = () => {
   const { t } = useTranslation();

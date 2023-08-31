@@ -1,18 +1,12 @@
 .connect4-grid {
-    max-width: 550px;
-    margin: 25px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    max-width: 550px;
+    margin: 25px;
+    padding: 10px;
     border: 2px solid #333;
     background-color: #4eefea;
-    padding: 10px;
-}
-
-.column {
-    display: flex;
-    margin: 10px;
-    flex-direction: column;
 }
 
 .col:hover {

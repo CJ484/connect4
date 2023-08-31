@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { getRedScore, getYellowScore } from '../../const/selectors/game';
-import './styles.css'
+import './styles.scss'
 
 
 const GameScore = () => {
