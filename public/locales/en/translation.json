@@ -1,0 +1,17 @@
+{
+  "titles": {
+    "main": "Connect 4",
+    "currentPlayer": "Current Turn",
+    "scores": "Scores"
+  },
+  "players": {
+    "one": "Red",
+    "two": "Yellow"
+  },
+  "winner": {
+    "winnerStatement": "Player Wins!"
+  },
+  "button": {
+    "new": "New Game"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "titles": {
+    "main": "Connecter 4",
+    "currentPlayer": "Tour actuel",
+    "scores": "Partitions"
+  },
+  "players": {
+    "one": "Rougue",
+    "two": "Jaune"
+  },
+  "winner": {
+    "winnerStatement": "Le Joueur gagne!"
+  },
+  "button": {
+    "new": "Nouveau jeu"
+  }
+}
