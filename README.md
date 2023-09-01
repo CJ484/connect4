@@ -4,7 +4,8 @@
 https://64eff8739ebce40008b70bf1--quiet-bonbon-60a447.netlify.app/
 
 ## Summary
-    What I created is a simple connect 4 game, where the objective is to get 4 consecutive chips in a row wither horizontally or vertically.
+    What I created is a simple connect 4 game, where the objective is to get 4 consecutive chips
+    in a row either horizontally or vertically in this 6x7 grid board.
     The game will switch turns after the opposing player selects their placement.
 
 ## Installation

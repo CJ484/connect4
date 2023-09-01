@@ -1,78 +1,66 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
-import {range, findLastIndex} from "lodash";
+import { range, every } from "lodash";
 import { useDispatch } from "react-redux";
 
 import gameSetting from "../../const/gameSettings";
-import { increaseScore, changeTurn } from "../../Redux/game";
+import { increaseScore, changeTurn, resetScores } from "../../Redux/game";
 import checkConsecutive from "../../utils/checkConsecutive.js";
 import { useTranslation } from "react-i18next";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.scss";
+import Board from "../CreateBoard";
 
 const BoardGame = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
+
   const numRows = gameSetting.numRows;
   const numCols = gameSetting.numCols;
-  const [board, setBoard] = useState(Array(numRows).fill(Array(numCols).fill(null)));
-  const [currentPlayer, setCurrentPlayer] = useState(gameSetting.players[0]);
-  const [opposingPlayer, setOpposingPlayer] = useState(gameSetting.players[1]);
+  const player1 = gameSetting.players[0];
+  const player2 = gameSetting.players[1];
+
+  //* The board is designed in a form of arrays. Arrays of Rows, inside is the cells that make up the columns
+  const [board, setBoard] = useState(
+    Array(numRows).fill(Array(numCols).fill(null))
+  );
+  const [currentPlayer, setCurrentPlayer] = useState(player1);
+  const [opposingPlayer, setOpposingPlayer] = useState(player2);
   const [winner, setWinner] = useState(null);
+  const [noWinner, setNoWinner] = useState(false);
 
   const initGame = () => {
     setWinner(null);
+    setNoWinner(false);
     setBoard(Array(numRows).fill(Array(numCols).fill(null)));
   };
 
-  const handleCellClick = (col) => {
-    if (winner) return;
-    const updatedGrid = board.map((row) => [...row]);
-    const emptyRow = findLastIndex(updatedGrid, (row) => !row[col]);
-
-    if (emptyRow !== -1) {
-      updatedGrid[emptyRow][col] = currentPlayer;
-      setBoard(updatedGrid);
-    }
-  };
-
-  const renderCell = (row, col) => {
-    const value = board[row][col];
-    return (
-      <div
-        key={col}
-        className={`cell ${value}`}
-        onClick={() => handleCellClick(col)}
-      />
-    );
-  };
-
-  const renderRow = (row) => {
-    return (
-      <div key={row} id={`row${row}`} className="row">
-        {board[row].map((_, col) => (
-          <div key={col} className="col">
-            {renderCell(row, col)}
-          </div>
-        ))}
-      </div>
-    );
+  const resetGame = () => {
+    dispatch(resetScores());
+    setWinner(null);
+    setNoWinner(false);
+    setBoard(Array(numRows).fill(Array(numCols).fill(null)));
   };
 
   const winnerStatus = () => {
+    //? lines 76 & 77 are used to look through all rows and columns
     range(0, numRows).forEach((row) => {
       range(0, numCols).forEach((col) => {
-        if (board[row][col]) {
-          //? Explanation for If Statement: checkConsecutive is designed to check in both vetical & horizontal directions.
-          //? If the function detects that their is any row or column with 4 of the same color in either direction. It will return TRUE
+        //? player color looks at board and sees each colors location
+        const playersColor = board[row][col];
+        //? The checkConsecutive will return true if it found 4 in a row, in which it will award the winner 1 point
+        //? if the board is filled with no winner . A draw is announced.
+        if (playersColor) {
           if (
-            checkConsecutive(board, board[row][col], row, col, 1, 0) ||
-            checkConsecutive(board, board[row][col], row, col, 0, 1)
+            checkConsecutive(board, playersColor, row, col, 1, 0) ||
+            checkConsecutive(board, playersColor, row, col, 0, 1)
           ) {
-            setWinner(board[row][col]);
+            setWinner(playersColor);
             dispatch(increaseScore({ key: `${currentPlayer}` }));
             return;
+          } else if (every(board[0], (cell) => cell !== null)) {
+            setNoWinner(true);
           }
         }
       });
@@ -81,8 +69,8 @@ const BoardGame = () => {
 
   useEffect(() => {
     winnerStatus();
-    setCurrentPlayer(currentPlayer === "red" ? "yellow" : "red");
-    setOpposingPlayer(opposingPlayer === "yellow" ? "red" : "yellow");
+    setCurrentPlayer(currentPlayer === player1 ? player2 : player1);
+    setOpposingPlayer(opposingPlayer === player2 ? player1 : player2);
     dispatch(changeTurn(opposingPlayer));
   }, [board]);
 
@@ -90,12 +78,21 @@ const BoardGame = () => {
     <div className="connect4-grid">
       {winner ? (
         <div className="winner-message">
-          <p>{winner === "red" ? "Red" : "Yellow"} {t('winner.winnerStatement')}</p>
+          <p>
+            {winner === player1 ? player1 : player2}{" "}
+            {t("winner.winnerStatement")}
+          </p>
           <button onClick={() => initGame()}>{t(`button.new`)}</button>
+        </div>
+      ) : noWinner ? (
+        <div>
+          <h4>It is a draw! No winner</h4>
+          <button onClick={() => resetGame()}>Reset  Board</button>
         </div>
       ) : (
         <div className="game-board">
-          {Array.from({ length: numRows }, (_, row) => renderRow(row))}
+          <Board winner={winner} board={board} setBoard={setBoard} currentPlayer={currentPlayer}/>
+          <button onClick={() => resetGame()}>Reset Game</button>
         </div>
       )}
     </div>
