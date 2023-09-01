@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 
 import App from './App';
 import store from './Redux/store';
-import './utils/I18Next/index'
+import './utils/i18Next/index'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
