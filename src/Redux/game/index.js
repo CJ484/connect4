@@ -1,14 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const initialState = {
+  player: "yellow",
+  scores: {
+    red: 0,
+    yellow: 0,
+  },
+};
+
 const game = createSlice({
   name: "game",
-  initialState: {
-    player: 'yellow',
-    scores: {
-      red: 0,
-      yellow: 0,
-    }
-  },
+  initialState,
   reducers: {
     changeTurn: (state, action) => {
       state.player = action.payload;
@@ -17,8 +19,9 @@ const game = createSlice({
       const { key } = action.payload;
       state.scores[key]++
     },
+    resetScores: () => initialState,
   },
 });
 
-export const { increaseScore, changeTurn } = game.actions;
+export const { increaseScore, changeTurn,resetScores } = game.actions;
 export default game.reducer;
