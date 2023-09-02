@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { getCurrentTurn } from '../../const/selectors/game';
+import { getCurrentTurn } from '../../Redux/selectors/game';
 import './styles.scss';
 
 const CurrentTurn = () => {
