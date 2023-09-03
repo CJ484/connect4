@@ -9,7 +9,7 @@ const CurrentTurn = () => {
   return (
     <div className='currentTurn'>
       <h1>{t(`titles.currentPlayer`)}</h1>
-      <h2>{currentTurn}'s Turn</h2>
+      <h2>{currentTurn}'s {t(`players.turn`)}</h2>
     </div>
   ) 
 };

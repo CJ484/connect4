@@ -10,16 +10,14 @@ import { useTranslation } from "react-i18next";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.scss";
-import Board from "../CreateBoard";
+import CreateBoard from "../CreateBoard";
 
 const BoardGame = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
 
-  const numRows = gameSetting.numRows;
-  const numCols = gameSetting.numCols;
-  const player1 = gameSetting.players[0];
-  const player2 = gameSetting.players[1];
+  const {numRows, numCols} = gameSetting
+  const [player1, player2] = [`${t(`players.one`)}`, t(`players.two`)]
 
   //* The board is designed in a form of arrays. Arrays of Rows, inside is the cells that make up the columns
   const [board, setBoard] = useState(
@@ -87,11 +85,11 @@ const BoardGame = () => {
       ) : noWinner ? (
         <div>
           <h4>It is a draw! No winner</h4>
-          <button onClick={() => resetGame()}>Reset  Board</button>
+          <button onClick={() => resetGame()}>Reset Board</button>
         </div>
       ) : (
         <div className="game-board">
-          <Board winner={winner} board={board} setBoard={setBoard} currentPlayer={currentPlayer}/>
+          <CreateBoard winner={winner} board={board} setBoard={setBoard} currentPlayer={currentPlayer}/>
           <button onClick={() => resetGame()}>Reset Game</button>
         </div>
       )}

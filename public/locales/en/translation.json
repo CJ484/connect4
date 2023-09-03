@@ -6,7 +6,8 @@
   },
   "players": {
     "one": "Red",
-    "two": "Yellow"
+    "two": "Yellow",
+    "turn": "Turn"
   },
   "winner": {
     "winnerStatement": "Player Wins!"
