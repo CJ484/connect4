@@ -4,13 +4,14 @@ import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEarthAmericas } from "@fortawesome/free-solid-svg-icons";
 import locales from "../../const/locales";
+import './styles.scss';
 
 export default function Languagelist() {
   const { i18n } = useTranslation();
 
   return (
     <Dropdown>
-      <Dropdown.Toggle variant="warning">
+      <Dropdown.Toggle>
         <FontAwesomeIcon icon={faEarthAmericas} />
       </Dropdown.Toggle>
       <Dropdown.Menu>
