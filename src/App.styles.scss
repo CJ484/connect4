@@ -6,6 +6,11 @@
     }
 }
 
+.dropdown {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .game {
     display: flex;
     flex-direction: row;
