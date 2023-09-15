@@ -93,7 +93,7 @@ const BoardGame = () => {
           <button onClick={() => resetGame()}>Reset Board</button>
         </div>
       ) : (
-        <div>
+        <div className="gameSetup">
           <CreateBoard winner={winner} board={board} setBoard={setBoard} currentPlayer={currentPlayer}/>
           <button onClick={() => resetGame()}>Reset Game</button>
         </div>
