@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { range, every } from "lodash";
 import { useDispatch } from "react-redux";
 
+import CreateBoard from "../CreateBoard";
 import gameSetting from "../../const/gameSettings";
 import { increaseScore, changeTurn, resetScores } from "../../Redux/game";
 import checkConsecutive from "../../utils/checkConsecutive.js";
@@ -10,7 +11,6 @@ import { useTranslation } from "react-i18next";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.scss";
-import CreateBoard from "../CreateBoard";
 
 const BoardGame = () => {
   const { t } = useTranslation();
@@ -65,10 +65,15 @@ const BoardGame = () => {
     });
   };
 
+  const hoverEffect = () => {
+    document.documentElement.style.setProperty('--currentPlayer-color', opposingPlayer);
+  };
+
   useEffect(() => {
     winnerStatus();
     setCurrentPlayer(currentPlayer === player1 ? player2 : player1);
     setOpposingPlayer(opposingPlayer === player2 ? player1 : player2);
+    hoverEffect();
     dispatch(changeTurn(opposingPlayer));
   }, [board]);
 
@@ -88,7 +93,7 @@ const BoardGame = () => {
           <button onClick={() => resetGame()}>Reset Board</button>
         </div>
       ) : (
-        <div className="game-board">
+        <div>
           <CreateBoard winner={winner} board={board} setBoard={setBoard} currentPlayer={currentPlayer}/>
           <button onClick={() => resetGame()}>Reset Game</button>
         </div>

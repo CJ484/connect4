@@ -1,3 +1,7 @@
+:root {
+    --currentPlayer-color: rgba(255, 0, 0, 0.389);
+}
+
 .connect4-grid {
     display: flex;
     flex-direction: row;
@@ -28,8 +32,9 @@
     
 }
 
-div.col:hover > div:first-child {
-    background-color: rgba(255, 0, 0, 0.711);
+.row:first-child > .col > .cell:hover {
+    background-color: var(--currentPlayer-color);
+    opacity: 0.62;
 }
 
 .null {
