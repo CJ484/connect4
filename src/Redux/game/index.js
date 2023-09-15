@@ -3,8 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   player: "yellow",
   scores: {
-    red: 0,
-    yellow: 0,
+    Red: 0,
+    Yellow: 0,
   },
 };
 
