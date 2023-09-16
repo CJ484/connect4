@@ -7,9 +7,10 @@ const CurrentTurn = () => {
   const { t } = useTranslation();
     const currentTurn = useSelector(getCurrentTurn());
   return (
-    <div className='currentTurn'>
+    <div className='current-turn'>
       <h1>{t(`titles.currentPlayer`)}</h1>
       <h2>{currentTurn}'s {t(`players.turn`)}</h2>
+      <div className='current-chip'></div>
     </div>
   ) 
 };
