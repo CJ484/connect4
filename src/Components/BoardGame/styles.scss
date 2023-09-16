@@ -10,7 +10,7 @@
     padding: 10px;
     border: 2px solid #333;
     background-color: #4eefea;
-    .gameSetup {
+    .game-setup {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -33,7 +33,6 @@
     height: 50px;
     border-radius: 50%;
     margin: 2px;
-    
 }
 
 .row:first-child > .col > .cell:hover {
@@ -45,10 +44,29 @@
     background-color: white;
 }
 
-.Red, .Jaune{
+.Red,
+.Jaune {
     background-color: red;
 }
 
-.Yellow, .Rougue {
+.Yellow,
+.Rougue {
     background-color: yellow;
+}
+
+@media (min-width: 360px) and (max-width: 1023px) {
+    .col {
+        padding: 0;
+        margin: 5px;
+    }
+
+    .cell {
+        width: 6vw;
+        height: 6vh;
+    }
+
+    .row:first-child > .col > .cell:hover {
+        background-color: white;
+        opacity: inherit;
+    }
 }

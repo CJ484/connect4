@@ -10,7 +10,7 @@ function App() {
       <h1>{t(`titles.main`)}</h1>
       <Languagelist />
       <div className='game'>
-        <div className="sidePanel">
+        <div className="side-panel">
           <CurrentTurn />
           <GameScore />
         </div>
