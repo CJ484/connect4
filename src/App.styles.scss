@@ -1,0 +1,41 @@
+.App {
+    display: flex;
+    flex-direction: column;
+    h1 {
+        text-align: center;
+    }
+}
+
+.dropdown {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.game {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    .side-panel {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 360px) and (max-width: 1023px) {
+    .App {
+        align-items: center;
+    }
+
+    .side-panel {
+        flex-direction: row !important;
+        justify-content: space-around;
+    }
+
+    .game {
+        flex-direction: column;
+    }
+
+    .game-setup {
+        width: 100vw;
+    }
+}

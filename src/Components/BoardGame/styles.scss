@@ -1,0 +1,72 @@
+:root {
+    --currentPlayer-color: rgba(255, 0, 0, 0.389);
+}
+
+.connect4-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 550px;
+    padding: 10px;
+    border: 2px solid #333;
+    background-color: #4eefea;
+    .game-setup {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .game-board {
+        display: flex;
+        flex-direction: column;
+        button {
+            margin-top: 20px;
+        }
+    }
+}
+
+.col:hover {
+    cursor: pointer;
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 2px;
+}
+
+.row:first-child > .col > .cell:hover {
+    background-color: var(--currentPlayer-color);
+    opacity: 0.62;
+}
+
+.null {
+    background-color: white;
+}
+
+.Red,
+.Jaune {
+    background-color: red;
+}
+
+.Yellow,
+.Rougue {
+    background-color: yellow;
+}
+
+@media (min-width: 360px) and (max-width: 1023px) {
+    .col {
+        padding: 0;
+        margin: 5px;
+    }
+
+    .cell {
+        width: 6vw;
+        height: 6vh;
+    }
+
+    .row:first-child > .col > .cell:hover {
+        background-color: white;
+        opacity: inherit;
+    }
+}

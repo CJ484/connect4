@@ -1,21 +1,24 @@
-import { GetRedScore, GetYellowScore } from '../../const/selectors/scores';
-import './styles.css'
+import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
+import { getRedScore, getYellowScore } from '../../Redux/selectors/game';
+import './styles.scss'
 
 
 const GameScore = () => {
-  const redTeamScore = GetRedScore();
-  const yellowTeamScore = GetYellowScore();
+  const { t } = useTranslation();
+  const redTeamScore = useSelector(getRedScore());
+  const yellowTeamScore = useSelector(getYellowScore());
 
   return (
     <div className="gameScore">
-      <h1>Scores</h1>
+      <h1>{t(`titles.scores`)}</h1>
       <div className="teamScores">
         <div className="score">
-          <h1>Red</h1>
+          <h1>{t(`players.one`)}</h1>
           <h2>{redTeamScore}</h2>
         </div>
         <div className="score">
-          <h1>Yellow</h1>
+          <h1>{t('players.two')}</h1>
           <h2>{yellowTeamScore}</h2>
         </div>
       </div>

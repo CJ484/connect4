@@ -1,13 +1,16 @@
-import { GetCurrentTurn } from '../../const/selectors/currentTurn';
-import './styles.css';
-
+import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
+import { getCurrentTurn } from '../../Redux/selectors/game';
+import './styles.scss';
 
 const CurrentTurn = () => {
-    const currentTurn = GetCurrentTurn();
+  const { t } = useTranslation();
+    const currentTurn = useSelector(getCurrentTurn());
   return (
-    <div className='currentTurn'>
-      <h1>CurrentTurn</h1>
-      <h2>{currentTurn}'s Turn</h2>
+    <div className='current-turn'>
+      <h1>{t(`titles.currentPlayer`)}</h1>
+      <h2>{currentTurn}'s {t(`players.turn`)}</h2>
+      <div className='current-chip'></div>
     </div>
   ) 
 };

@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateBoard component matches the snapshot 1`] = `
+<div
+  className="game-board"
+>
+  <div
+    className="row"
+    data-testid="row"
+  >
+    <div
+      className="col"
+    >
+      <div
+        className="cell null"
+        data-testid="cell"
+        onClick={[Function]}
+      />
+    </div>
+    <div
+      className="col"
+    >
+      <div
+        className="cell null"
+        data-testid="cell"
+        onClick={[Function]}
+      />
+    </div>
+    <div
+      className="col"
+    >
+      <div
+        className="cell null"
+        data-testid="cell"
+        onClick={[Function]}
+      />
+    </div>
+  </div>
+  <div
+    className="row"
+    data-testid="row"
+  >
+    <div
+      className="col"
+    >
+      <div
+        className="cell null"
+        data-testid="cell"
+        onClick={[Function]}
+      />
+    </div>
+    <div
+      className="col"
+    >
+      <div
+        className="cell null"
+        data-testid="cell"
+        onClick={[Function]}
+      />
+    </div>
+    <div
+      className="col"
+    >
+      <div
+        className="cell null"
+        data-testid="cell"
+        onClick={[Function]}
+      />
+    </div>
+  </div>
+  <div
+    className="row"
+    data-testid="row"
+  >
+    <div
+      className="col"
+    >
+      <div
+        className="cell null"
+        data-testid="cell"
+        onClick={[Function]}
+      />
+    </div>
+    <div
+      className="col"
+    >
+      <div
+        className="cell null"
+        data-testid="cell"
+        onClick={[Function]}
+      />
+    </div>
+    <div
+      className="col"
+    >
+      <div
+        className="cell null"
+        data-testid="cell"
+        onClick={[Function]}
+      />
+    </div>
+  </div>
+</div>
+`;
