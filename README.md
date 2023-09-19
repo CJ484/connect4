@@ -1,30 +1,24 @@
-# Connect 4 Game
+# - 🔴 - Connect 4 - 🟡 -
 
-## Demo Link
-https://64eff8739ebce40008b70bf1--quiet-bonbon-60a447.netlify.app/
+This is my game of a classic game of Connect 4. The game is against 2 people and the game will end when it 1 player achieves 4 in a row or column of their color. The first player will decide to be red or yellow, this will be their decision. 
 
-## Summary
-    What I created is a simple connect 4 game, where the objective is to get 4 consecutive chips
-    in a row either horizontally or vertically in this 6x7 grid board.
-    The game will switch turns after the opposing player selects their placement.
+## Demo
 
-## Installation
-    1. Clone the Repo
-    2. Install NPM packages
-    3. Run npm start
+https://6505112c3e04040008cd90a9--connect4-cj484.netlify.app/
 
-## How to Play
-    1. Decide who will start off as player 1
-    2. Player 1 will start the game by placing their first chip
-    3. player 2 will then follow by strategiclly placing their first chip
-    4. The aim of the game is for one player to get 4 chips in a row either horizontally and vertically 
-    5. The game will cycle through each player until one places their 4th in a row
 
-## Built With
-    This Section should list any major frameworks/libraries used in this project.
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
-![Babel](https://img.shields.io/badge/Babel-F9DC3e?style=for-the-badge&logo=babel&logoColor=black)
+## Screenshots
+
+![App Screenshot](./assets/Images/screenshot_1.png)
+![App Screenshot](./assets/Images/screenshot_2.png)
+
+
+## Badges
+
 ![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
 ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
 ![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
+![ReactJS](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=white)
+![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
+![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
+![Babel](https://img.shields.io/badge/Babel-F9DC3e?style=for-the-badge&logo=babel&logoColor=black)
