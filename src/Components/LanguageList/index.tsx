@@ -1,8 +1,6 @@
-import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import { useTranslation } from "react-i18next";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEarthAmericas } from "@fortawesome/free-solid-svg-icons";
+import { FaGlobe } from "react-icons/fa";
 import locales from "../../const/locales";
 import './styles.scss';
 
@@ -12,7 +10,7 @@ export default function Languagelist() {
   return (
     <Dropdown>
       <Dropdown.Toggle>
-        <FontAwesomeIcon icon={faEarthAmericas} />
+        <FaGlobe />
       </Dropdown.Toggle>
       <Dropdown.Menu>
         {Object.keys(locales).map((locale) => (
@@ -20,7 +18,7 @@ export default function Languagelist() {
             key={locale}
             onClick={() => i18n.changeLanguage(locale)}
           >
-            {locales[locale].title}
+            {locales[locale as keyof typeof locales].title}
           </Dropdown.Item>
         ))}
       </Dropdown.Menu>

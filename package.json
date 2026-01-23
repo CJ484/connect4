@@ -1,61 +1,58 @@
 {
   "name": "connectfourgame",
   "version": "0.1.0",
+  "type": "module",
   "private": true,
   "dependencies": {
-    "@fortawesome/free-solid-svg-icons": "^6.4.2",
-    "@fortawesome/react-fontawesome": "^0.2.0",
-    "@reduxjs/toolkit": "^1.9.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "bootstrap": "^5.3.1",
-    "i18next": "^23.4.6",
-    "i18next-browser-languagedetector": "^7.1.0",
-    "i18next-http-backend": "^2.2.1",
-    "lodash": "^4.17.21",
-    "react": "^18.2.0",
-    "react-bootstrap": "^2.8.0",
-    "react-dom": "^18.2.0",
-    "react-i18next": "^13.2.1",
-    "react-redux": "^8.1.2",
-    "react-scripts": "5.0.1",
-    "redux": "^4.2.1",
-    "sass": "^1.66.1",
-    "web-vitals": "^2.1.4"
+    "@reduxjs/toolkit": "^2.11.2",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
+    "eslint": "^9.39.2",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.26",
+    "i18next": "^25.8.0",
+    "i18next-browser-languagedetector": "^8.2.0",
+    "i18next-http-backend": "^3.0.2",
+    "lodash": "^4.17.23",
+    "react": "^19.2.3",
+    "react-bootstrap": "^2.10.10",
+    "react-dom": "^19.2.3",
+    "react-i18next": "^16.5.3",
+    "react-icons": "^5.5.0",
+    "react-redux": "^9.2.0",
+    "redux": "^5.0.1",
+    "sass": "^1.97.3",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.53.1",
+    "web-vitals": "^5.1.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@types/lodash": "^4.17.23",
+    "@types/node": "^25.0.10",
+    "@types/react": "^19.2.9",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react-swc": "^4.2.2",
+    "globals": "^17.1.0",
+    "jest": "^30.2.0",
+    "jest-environment-jsdom": "^30.2.0",
+    "react-test-renderer": "^19.2.3",
+    "vite": "^7.3.1"
   },
   "jest": {
     "testEnvironment": "jsdom"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "jest",
-    "eject": "react-scripts eject"
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
     ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "@babel/preset-env": "^7.22.14",
-    "@babel/preset-react": "^7.22.5",
-    "@testing-library/jest-dom": "^6.1.2",
-    "jest": "^29.6.4",
-    "jest-environment-jsdom": "^29.6.4",
-    "react-test-renderer": "^18.2.0"
   }
 }

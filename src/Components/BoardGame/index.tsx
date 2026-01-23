@@ -1,15 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { range, every } from "lodash";
 import { useDispatch } from "react-redux";
-
-import CreateBoard from "../CreateBoard";
-import gameSetting from "../../const/gameSettings";
-import { increaseScore, changeTurn, resetScores } from "../../Redux/game";
-import checkConsecutive from "../../utils/checkConsecutive.js";
+import CreateBoard from "../CreateBoard/index.js";
+import gameSetting from "../../const/gameSettings/index.js";
+import { increaseScore, changeTurn, resetScores } from "../../Redux/game/index.js";
+import checkConsecutive from "../../utils/checkConsecutive.js/index.js";
 import { useTranslation } from "react-i18next";
-
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.scss";
 
 const BoardGame = () => {

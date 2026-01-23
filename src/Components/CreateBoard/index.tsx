@@ -1,4 +1,3 @@
-import React from "react";
 import { findLastIndex } from "lodash";
 import gameSetting from "../../const/gameSettings";
 
@@ -30,9 +29,9 @@ import gameSetting from "../../const/gameSettings";
 
       const renderRow = (row) => {
         return (
-          <div data-testid={`row`} key={row} className="row">
+          <div data-testid={`row`} key={row} style={{ display: 'flex', flexDirection: 'row' }}>
             {board[row].map((_, col) => (
-              <div key={col} className="col">
+              <div key={col} style={{ display: 'flex', flexDirection: 'column' }}>
                 {renderCell(row, col)}
               </div>
             ))}

@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next';
 import Languagelist from './Components/LanguageList';
 import {CurrentTurn, GameScore, BoardGame } from './Components/index'
-import './App.styles.scss'
+import './styles/global.scss'
 
-function App() {
+export default function Layout() {
   const { t } = useTranslation();
   return (
     <div className="App">
@@ -19,5 +19,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
