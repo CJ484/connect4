@@ -1,5 +1,5 @@
 import checkConsecutive from './index'
-import gameSetting from "../../const/gameSettings/index";
+import gameSetting from "@/const/gameSettings/index";
 
 describe("checkConsecutive function", () => {
   let board;

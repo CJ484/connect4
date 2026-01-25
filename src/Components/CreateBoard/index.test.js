@@ -3,9 +3,9 @@ import { fireEvent, render, screen} from "@testing-library/react";
 import '@testing-library/jest-dom';
 import ReactTestRenderer from "react-test-renderer";
 import CreateBoard from "./index";
-import gameSetting from "../../const/gameSettings";
+import gameSetting from "@/const/gameSettings";
 
-jest.mock("../../const/gameSettings", () => ({
+jest.mock("@/const/gameSettings", () => ({
   numRows: 3,
 }));
 

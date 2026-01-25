@@ -1,4 +1,4 @@
-import gameSetting from '../../const/gameSettings/index';
+import gameSetting from '@/const/gameSettings/index';
 
 //? board: A 2D array that represents the game board.
 //? color: The color to look for in the consecutive.

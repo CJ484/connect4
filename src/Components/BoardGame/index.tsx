@@ -2,10 +2,10 @@
 import { useState, useEffect } from "react";
 import { range, every } from "lodash";
 import { useDispatch } from "react-redux";
-import CreateBoard from "../CreateBoard/index.js";
-import gameSetting from "../../const/gameSettings/index.js";
-import { increaseScore, changeTurn, resetScores } from "../../Redux/game/index.js";
-import checkConsecutive from "../../utils/checkConsecutive.js/index.js";
+import CreateBoard from "@/Components/CreateBoard/index.tsx";
+import gameSetting from "@/const/gameSettings/index.js";
+import { increaseScore, changeTurn, resetScores } from "@/Redux/game/index.js";
+import checkConsecutive from "@/utils/checkConsecutive.js/index.js";
 import { useTranslation } from "react-i18next";
 import "./styles.scss";
 

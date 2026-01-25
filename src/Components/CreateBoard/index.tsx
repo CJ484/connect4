@@ -1,10 +1,17 @@
 import { findLastIndex } from "lodash";
-import gameSetting from "../../const/gameSettings";
+import gameSetting from "@/const/gameSettings";
 
-  const CreateBoard = ({winner, board, setBoard, currentPlayer}) => {
+type CreateBoardProps = {
+  winner: string | null;
+  board: string[][];
+  setBoard: (board: string[][]) => void;
+  currentPlayer: string;
+}
+
+  const CreateBoard = ({winner, board, setBoard, currentPlayer}: CreateBoardProps) => {
     const numRows = gameSetting.numRows;
 
-  const handleCellClick = (col) => {
+  const handleCellClick = (col: number) => {
     if (winner) return;
     const updatedGrid = board.map((row) => [...row]);
     const emptyRow = findLastIndex(updatedGrid, (row) => !row[col]);
@@ -15,7 +22,7 @@ import gameSetting from "../../const/gameSettings";
     }
   };
 
-      const renderCell = (row, col) => {
+      const renderCell = (row: number, col: number) => {
         const cellLocation = board[row][col];
         return (
           <div
@@ -27,7 +34,7 @@ import gameSetting from "../../const/gameSettings";
         );
       };
 
-      const renderRow = (row) => {
+      const renderRow = (row: number) => {
         return (
           <div data-testid={`row`} key={row} style={{ display: 'flex', flexDirection: 'row' }}>
             {board[row].map((_, col) => (
