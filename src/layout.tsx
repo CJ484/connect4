@@ -1,13 +1,14 @@
 import { useTranslation } from 'react-i18next';
-import Languagelist from './Components/LanguageList';
-import {CurrentTurn, GameScore, BoardGame } from './Components/index'
+import {CurrentTurn, GameScore, BoardGame, Background, Languagelist } from './Components/index'
 import './styles/global.scss'
 
 export default function Layout() {
   const { t } = useTranslation();
+  
   return (
     <div className="body">
-      <h1>{t(`titles.main`)}</h1>
+      <Background />
+      <h1 className="title">{t(`titles.main`)}</h1>
       <Languagelist />
       <div className='game'>
         <div className="side-panel">
