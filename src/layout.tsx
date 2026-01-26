@@ -6,7 +6,7 @@ import './styles/global.scss'
 export default function Layout() {
   const { t } = useTranslation();
   return (
-    <div className="App">
+    <div className="body">
       <h1>{t(`titles.main`)}</h1>
       <Languagelist />
       <div className='game'>
