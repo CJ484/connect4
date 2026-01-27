@@ -4,7 +4,7 @@ This is my game of a classic game of Connect 4. The game is against 2 people and
 
 ## Demo
 
-https://6505112c3e04040008cd90a9--connect4-cj484.netlify.app/
+https://connect4-cj484.netlify.app/
 
 
 ## Screenshots
