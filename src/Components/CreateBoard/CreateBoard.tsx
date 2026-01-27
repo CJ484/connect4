@@ -1,5 +1,6 @@
 import { findLastIndex } from "lodash";
 import gameSetting from "@/const/gameSettings";
+import "./CreateBoard.scss";
 
 type CreateBoardProps = {
   winner: string | null;
@@ -47,7 +48,7 @@ type CreateBoardProps = {
       };
 
     return (
-      <div className="game-board">
+      <div className="boardGrid">
         {Array.from({ length: numRows }, (_, row) => renderRow(row))}
       </div>
     );

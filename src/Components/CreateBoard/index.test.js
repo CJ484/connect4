@@ -2,7 +2,7 @@ import React from "react";
 import { fireEvent, render, screen} from "@testing-library/react";
 import '@testing-library/jest-dom';
 import ReactTestRenderer from "react-test-renderer";
-import CreateBoard from "./index";
+import CreateBoard from "./CreateBoard";
 import gameSetting from "@/const/gameSettings";
 
 jest.mock("@/const/gameSettings", () => ({
