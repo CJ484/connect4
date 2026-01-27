@@ -1,15 +1,14 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import { range, every } from "lodash";
 import { useDispatch } from "react-redux";
-import CreateBoard from "@/Components/CreateBoard/index.tsx";
+import CreateBoard from "@/Components/CreateBoard/CreateBoard";
 import gameSetting from "@/const/gameSettings/index.js";
 import { increaseScore, changeTurn, resetScores } from "@/Redux/game/index.js";
 import checkConsecutive from "@/utils/checkConsecutive.js/index.js";
 import { useTranslation } from "react-i18next";
-import "./styles.scss";
+import "./BoardGame.scss";
 
-const BoardGame = () => {
+export default function BoardGame() {
   const { t } = useTranslation();
   const dispatch = useDispatch();
 
@@ -75,28 +74,26 @@ const BoardGame = () => {
   }, [board]);
 
   return (
-    <div className="connect4-grid">
+    <div className="boardGame">
       {winner ? (
-        <div className="winner-message">
-          <p>
+        <div className="boardGame__message">
+          <p className={`boardGame__message-text ${winner === player1 ? 'red' : 'yellow'}`}>
             {winner === player1 ? player1 : player2}{" "}
             {t("winner.winnerStatement")}
           </p>
-          <button onClick={() => initGame()}>{t(`button.new`)}</button>
+          <button className="boardGame__button" onClick={() => initGame()}>{t(`button.new`)}</button>
         </div>
       ) : noWinner ? (
-        <div>
-          <h4>It is a draw! No winner</h4>
-          <button onClick={() => resetGame()}>Reset Board</button>
+        <div className="boardGame__message">
+          <h4 className="boardGame__message-text">It is a draw! No winner</h4>
+          <button className="boardGame__button" onClick={() => resetGame()}>Reset Board</button>
         </div>
       ) : (
-        <div className="game-setup">
+        <div className="boardGame__setup">
           <CreateBoard winner={winner} board={board} setBoard={setBoard} currentPlayer={currentPlayer}/>
-          <button onClick={() => resetGame()}>Reset Game</button>
+          <button className="boardGame__button" onClick={() => resetGame()}>Reset Game</button>
         </div>
       )}
     </div>
   );
 };
-
-export default BoardGame;

@@ -1,0 +1,74 @@
+.boardGame {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    min-height: 400px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid oklch(1 0 0 / 0.1);
+    background-color: oklch(0.51 0.2729 263.49 / 0.88);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 2px solid oklch(1 0 0 / 0.1);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+
+    &__setup {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    &__board {
+        display: flex;
+        flex-direction: column;
+        button {
+            margin-top: 20px;
+        }
+    }
+
+    &__message {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        &-text {
+            font-size: 24px;
+            font-weight: 600;
+            text-align: center;
+            border-radius: 10px;
+            padding: var(--spacing-1) var(--spacing-3);
+            &.red {
+                background-color: color-mix(in srgb, var(--red-color) 30%, transparent);
+                border: 2px solid color-mix(in srgb, var(--red-color) 50%, transparent);
+                color: var(--red-color);
+            }
+            &.yellow {
+                background-color: color-mix(in srgb, var(--yellow-color) 30%, transparent);
+                border: 2px solid color-mix(in srgb, var(--yellow-color) 50%, transparent);
+                color: var(--yellow-color);
+            }
+        }
+    }
+
+    &__button {
+        border-radius: 10px;
+        padding: 10px;
+        background-color: var(--primary);
+        color: var(--primary-foreground);
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        &:hover {
+            background-color: color-mix(in srgb, var(--primary) 80%, transparent);
+        }
+    }
+}
