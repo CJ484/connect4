@@ -1,12 +1,46 @@
 .gameScore {
-    padding: 5px;
-    border: 1px solid black;
-}
-
-.teamScores {
     display: flex;
-}
-.score {
-    margin: 5px;
-    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    &__title {
+        font-size: 1.2rem;
+        font-weight: 800;
+    }
+    &__teamScores {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    &__score {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        text-align: center;
+    }
+    &__player-name {
+        font-size: 1.2rem;
+        font-weight: 400;
+        text-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+        &.gameScore__player-name-red {
+            color: var(--red-color);
+        }
+        &.gameScore__player-name-yellow {
+            color: var(--yellow-color);
+        }
+    }
+    &__player-score {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
 }

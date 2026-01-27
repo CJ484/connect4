@@ -11,15 +11,15 @@ const GameScore = () => {
 
   return (
     <div className="gameScore">
-      <h1>{t(`titles.scores`)}</h1>
-      <div className="teamScores">
-        <div className="score">
-          <h1>{t(`players.one`)}</h1>
-          <h2>{redTeamScore}</h2>
+      <h2 className="gameScore__title">{t(`titles.scores`)}</h2>
+      <div className="gameScore__teamScores">
+        <div className="gameScore__score">
+          <h3 className="gameScore__player-name gameScore__player-name-red">{t(`players.one`)}</h3>
+          <h3 className="gameScore__player-score">{redTeamScore}</h3>
         </div>
-        <div className="score">
-          <h1>{t('players.two')}</h1>
-          <h2>{yellowTeamScore}</h2>
+        <div className="gameScore__score">
+          <h3 className="gameScore__player-name gameScore__player-name-yellow">{t('players.two')}</h3>
+          <h3 className="gameScore__player-score">{yellowTeamScore}</h3>
         </div>
       </div>
     </div>
