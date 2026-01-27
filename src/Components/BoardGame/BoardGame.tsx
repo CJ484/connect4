@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import CreateBoard from "@/Components/CreateBoard/CreateBoard";
 import gameSetting from "@/const/gameSettings/index.js";
 import { increaseScore, changeTurn, resetScores } from "@/Redux/game/index.js";
-import checkConsecutive from "@/utils/checkConsecutive.js/index.js";
+import checkWinningCondition from "@/utils/checkWinnigCondition/index.ts";
 import { useTranslation } from "react-i18next";
 import "./BoardGame.scss";
 
@@ -47,8 +47,10 @@ export default function BoardGame() {
         //? if the board is filled with no winner . A draw is announced.
         if (playersColor) {
           if (
-            checkConsecutive(board, playersColor, row, col, 1, 0) ||
-            checkConsecutive(board, playersColor, row, col, 0, 1)
+            checkWinningCondition({board, color: playersColor, row, col, rowIncrement: 1, colIncrement: 0}) ||
+            checkWinningCondition({board, color: playersColor, row, col, rowIncrement: 0, colIncrement: 1}) ||
+            checkWinningCondition({board, color: playersColor, row, col, rowIncrement: 1, colIncrement: 1}) ||
+            checkWinningCondition({board, color: playersColor, row, col, rowIncrement: 1, colIncrement: -1})
           ) {
             setWinner(playersColor);
             dispatch(increaseScore({ key: `${currentPlayer}` }));
