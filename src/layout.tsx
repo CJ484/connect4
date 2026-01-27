@@ -1,15 +1,17 @@
-import {CurrentTurn, GameScore, BoardGame, Background, Header } from './Components/index'
+import { PlayersTurn, PlayersScore, BoardGame, Background, Header } from './Components/index'
 import './styles/global.scss'
 
 export default function Layout() {
-  
+
   return (
     <div className="body">
       <Background />
       <Header />
-          <CurrentTurn />
-          <GameScore />
-        <BoardGame />
+      <div className="side-panel">
+        <PlayersTurn />
+        <PlayersScore />
       </div>
+      <BoardGame />
+    </div>
   );
 }
